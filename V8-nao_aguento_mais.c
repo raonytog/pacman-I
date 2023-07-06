@@ -80,7 +80,7 @@ typedef struct {
 } tFantasma4C;
 
 //estrutura para manipular os fantasmas e suas informacoes
-typedef struct {
+typedef struct {   
     tFantasma1B fantB;
     tFantasma2P fantP;
     tFantasma3I fantI;
@@ -356,13 +356,12 @@ tJogo EfetuaJogadaFantasmas (tJogo jogo) {
 
     tFantasma1B fb;     tFantasma2P fp;     tFantasma3I fi;     tFantasma4C fc;
     fb = fant.fantB;    fp = fant.fantP;    fi = fant.fantI;    fc = fant.fantC;
-    printf("EH GULAO EIN %d", fb.fantasmaGulao);
-    
+    printf("%d AUAUHA", fant.fantB.fantasmaGulao);
+
     tCoordenada coord;
     if (fb.presenteNoJogo) {
         coord = fb.coordFantB;
-            if (fb.flag) {
-                if (coord.y - jogo.dmov >= 0 || coord.y + jogo.dmov < jogo.nLinhas) {
+                //if (coord.y - jogo.dmov >= 0 || coord.y + jogo.dmov < jogo.nLinhas) {
                     if (jogo.mapa[coord.x][coord.y - jogo.dmov] != PAREDE) {
                         if (jogo.mapa[coord.x][coord.y - jogo.dmov] == PACMAN) {
                             pac.qtdVida--;
@@ -372,19 +371,19 @@ tJogo EfetuaJogadaFantasmas (tJogo jogo) {
 
                         jogo.mapa[coord.x][coord.y-jogo.dmov] = GHOST1;
 
+                        if (fb.fantasmaGulao) {
+                            jogo.mapa[coord.x][coord.y] = '*';
+                        }
+                        
+                        printf("%d %d\n\n", coord.x, coord.y - jogo.dmov);
                         if (jogo.mapa[coord.x][coord.y - jogo.dmov] == COMIDA) {
                             fb.fantasmaGulao = 1;
+                            printf("%d oaiaiaia", fb.fantasmaGulao);
                             fant.fantB = fb;
                             jogo.fantasmas = fant;
                         }
 
-                        if (fb.fantasmaGulao) {
-                            jogo.mapa[coord.x][coord.y] = '*';
-                            return jogo;
-                        }
-
                         jogo.mapa[coord.x][coord.y] = ' ';
-                        return jogo;
 
                     } else if (jogo.mapa[coord.x][coord.y - jogo.dmov] == PAREDE) {
                         fb.flag = 0;
@@ -393,11 +392,11 @@ tJogo EfetuaJogadaFantasmas (tJogo jogo) {
                         jogo.fantasmas = fant;
                         jogo.mapa[coord.x][coord.y - jogo.dmov] = GHOST1;
                         jogo.mapa[coord.x][coord.y] = ' ';
-                        return jogo;
                     }
-                }
-            }   
+            //}   
     }
+    return jogo;
+
 }
 
 
@@ -422,7 +421,7 @@ tFantasmas IdentificaFantasmasPresentes(tJogo jogo) {
         for (j = 0; j < jogo.nColunas; j++) {
             if (jogo.mapa[i][j] ==  GHOST1) {
                 f1.presenteNoJogo = 1;
-                f1.flag = 1;
+                f1.fantasmaGulao = 9999;
                 fant.fantB = f1;
                 coord.x = i; coord.y = j;
                 f1.coordFantB = coord;

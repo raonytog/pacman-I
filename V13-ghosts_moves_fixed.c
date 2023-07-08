@@ -210,6 +210,8 @@ tJogo InicializaJogo (tJogo jogo) {
     coord = IdentificaCoordenada(jogo, PACMAN);
     printf("\nPac-Man comecara o jogo na linha %d e coluna %d\n",  coord.x + 1, coord.y + 1);
 
+
+
     jogo.gameover = 0;
     jogo.deltaMovF1 = 1;
     jogo.deltaMovF2 = 1;
@@ -397,6 +399,7 @@ tJogo EfetuaJogadaFantasma (tJogo jogo) {
     return jogo;
 }
 
+// movimenta o fantasma B
 tJogo Fantasma1Bmovimento (tJogo jogo) {
     tCoordenada temp;   tFantasma1B fb;     tPacman pac;
     temp = jogo.aux1;   fb = jogo.fb;       pac = jogo.pacman;
@@ -465,6 +468,7 @@ tJogo Fantasma1Bmovimento (tJogo jogo) {
     return jogo;
 }
 
+// movimenta o fantasma P
 tJogo Fantasma2Pmovimento (tJogo jogo) {
     tCoordenada temp;   tFantasma2P fp;     tPacman pac;
     temp = jogo.aux2;   fp = jogo.fp;       pac = jogo.pacman;
@@ -533,6 +537,7 @@ tJogo Fantasma2Pmovimento (tJogo jogo) {
     return jogo;
 }
 
+// movimenta o fantasma I
 tJogo Fantasma3Imovimento (tJogo jogo) {
     tCoordenada temp;   tFantasma3I fi;     tPacman pac;
     temp = jogo.aux3;   fi = jogo.fi;       pac = jogo.pacman;
@@ -601,6 +606,7 @@ tJogo Fantasma3Imovimento (tJogo jogo) {
     return jogo;
 }
 
+// movimenta o fantasma C
 tJogo Fantasma4Cmovimento (tJogo jogo) {
     tCoordenada temp;   tFantasma4C fc;     tPacman pac;
     temp = jogo.aux4;   fc = jogo.fc;       pac = jogo.pacman;
@@ -694,19 +700,20 @@ void RealizaJogo(tJogo jogo) {
     tEstatisticas status;
     status = jogo.stats; 
     int nMov = 0;
+    int pontos = 0;
 
     char acao;
     jogo = IdentificaFantasmasExistentes(jogo);
-    while (scanf("%c%*c", &acao) == 1 && 
-           RetornaPontuacao(jogo) != jogo.qtdComida) {
-
+    while (scanf("%c%*c", &acao) == 1) {
         if (nMov == jogo.qtdJogadas) {
             RetornaGameOver(jogo);
             exit(1);
         }
+        
+        printf("Estado do jogo apos o movimento '%c':\n", acao);
+        jogo = EfetuaJogadaPacman(jogo, acao); 
+        nMov++;
 
-        jogo = EfetuaJogadaPacman(jogo, acao); nMov++;
-        RetornaVidaPACMAN(jogo);
         jogo = EfetuaJogadaFantasma(jogo);
 
         if (!RetornaVidaPACMAN(jogo)) {
@@ -716,8 +723,10 @@ void RealizaJogo(tJogo jogo) {
 
         ImprimeMapa(jogo);
         printf("\nPontuacao: %d\n\n", RetornaPontuacao(jogo));
+
+        if (RetornaPontuacao(jogo) == jogo.qtdComida) break;
     }
-    
-    printf("\nVoce venceu!");
+            
+    printf("Voce venceu!");
     printf("\nPontuação final: %d\n", RetornaPontuacao(jogo));
 }

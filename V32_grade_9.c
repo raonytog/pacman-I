@@ -128,17 +128,17 @@ typedef struct {
     tMovS ms;
     tMovA ma;
     tMovD md;
-    int deltaMovF1; // qtd de avancos do fantasma 1 (B)
-    int deltaMovF2; // qtd de avancos do fantasma 2 (P)
-    int deltaMovF3; // qtd de avancos do fantasma 3 (I)
-    int deltaMovF4; // qtd de avancos do fantasma 4 (C)
-    int deltaMovP;  // qtd de avancos do pacman
-    int gameover;   // define se eh ou nao fim de jogo
-    int qtdComida;  // diz qnts comidas tem inicialmente no mapa
-    int qtdJogadas; // diz qnts jogadas o pacman pode ter na partida
-    int nLinhas;    // num de linhas presentes na matriz do mapa
-    int nColunas;   // num de colunas presentes na matriz do mapa
-    int flagResumo;
+    int deltaMovF1;     // qtd de avancos do fantasma 1 (B)
+    int deltaMovF2;     // qtd de avancos do fantasma 2 (P)
+    int deltaMovF3;     // qtd de avancos do fantasma 3 (I)
+    int deltaMovF4;     // qtd de avancos do fantasma 4 (C)
+    int deltaMovP;      // qtd de avancos do pacman
+    int gameover;       // define se eh ou nao fim de jogo
+    int qtdComida;      // diz qnts comidas tem inicialmente no mapa
+    int qtdJogadas;     // diz qnts jogadas o pacman pode ter na partida
+    int nLinhas;        // num de linhas presentes na matriz do mapa
+    int nColunas;       // num de colunas presentes na matriz do mapa
+    int flagResumo;     // flag para dizer acao q vai executar no resumo
     char mapa[MAX_LINHA][MAX_COLUNA];
     char mapaPac[MAX_LINHA][MAX_COLUNA];
     char mapaFant[MAX_LINHA][MAX_COLUNA];
@@ -148,28 +148,39 @@ typedef struct {
 
 //dump de funcoes, explicacoes sobre cada logo abaixo da main
 tJogo LeMapa (char *diretorio);
-tCoordenada IdentificaCoordenada(tJogo jogo, char s);
-void ImprimeMapa (tJogo jogo);
-void ImprimeMapaNoDiretorio (tJogo jogo, FILE * fDiretorio);
-tJogo InicializaJogo (tJogo jogo, char *diretorio);
 tJogo InicializaVariaveis(tJogo jogo);
 tJogo InicializaQtdComida(tJogo jogo);
 tJogo InicializaEstatisticas(tJogo jogo);
 tJogo InicializaPacman (tJogo jogo, tCoordenada coord);
-void RealizaJogo(tJogo jogo, char * diretorio);
-tJogo EfetuaJogadaPacman (tJogo jogo, char acao);
-int RetornaVidaPACMAN (tJogo jogo);
-int RetornaPontuacao (tJogo jogo);
-int EhFantasma(tJogo jogo, int l, int c);
+tJogo InicializaJogo (tJogo jogo, char *diretorio);
 tJogo InicializaFantasmas(tJogo jogo);
 tJogo MoveFantasmaB (tJogo jogo);
 tJogo MoveFantasmaP (tJogo jogo);
 tJogo MoveFantasmaI (tJogo jogo);
 tJogo MoveFantasmaC (tJogo jogo);
+tJogo EfetuaJogadaPacman (tJogo jogo, char acao, int nMov); 
 tJogo AnalisaCoordenadasGameOver(tJogo jogo);
 tJogo VerificaPosicaoPacEComida(tJogo jogo, char acao);   
+tJogo InicializaTrilha (tJogo jogo);
+tJogo EfetuaTrilha (tJogo jogo, int nthJogada);
+tJogo EfetuaResumo (tJogo jogo, char * diretorio, int nMov, char acao);
+tJogo InicializaTMovimentos(tJogo jogo);
+tCoordenada IdentificaCoordenada(tJogo jogo, char s);
 tCoordenada EncontraOutroPortal(tJogo jogo, int x, int y);
+void ImprimeMapa (tJogo jogo);
+void ImprimeMapaNoDiretorio (tJogo jogo, FILE * fDiretorio);
+void RealizaJogo(tJogo jogo, char * diretorio);
 void SaidaArquivoEstatisticas(tJogo jogo, char * diretorio, int qtdMov);
+void RetornaTrilha(tJogo jogo, char * diretorio);
+void RetornaRanking(tJogo jogo, char * diretorio);
+int CriterioUso (tMovimentos m, tMovimentos n);
+int CriterioColisao(tMovimentos m, tMovimentos n);
+int CriteriosRanking (tMovimentos m, tMovimentos n); 
+int RetornaVidaPACMAN (tJogo jogo);
+int RetornaPontuacao (tJogo jogo);
+int CriterioAlfabetico (tMovimentos m, tMovimentos n);
+int EhFantasma(tJogo jogo, int l, int c);
+
 
 int main (int argc, char * argv[]) {
     if (argc <= 1) {
@@ -186,7 +197,6 @@ int main (int argc, char * argv[]) {
     mapinha = LeMapa(diretorio);
     mapinha = InicializaJogo(mapinha, diretorio);
     RealizaJogo(mapinha, diretorio);
-    
     return 0;
 }
 
@@ -293,7 +303,6 @@ tJogo LeMapa (char *diretorio) {
 tCoordenada IdentificaCoordenada(tJogo jogo, char s) {
     tCoordenada coord;
     int i, j;
-
     if (s == PACMAN) {  //se for pacman
         for (i = 0; i < jogo.nLinhas; i++) {
             for (j = 0; j < jogo.nColunas; j++) {
@@ -359,7 +368,6 @@ tJogo InicializaVariaveis(tJogo jogo) {
     jogo.deltaMovF1 = -1;    jogo.deltaMovF2 = -1;
     jogo.deltaMovF3 = 1;     jogo.deltaMovF4 = 1;
     jogo.deltaMovP = 1;      jogo.flagResumo = 0;
-    
     return jogo;
 }
 
@@ -425,14 +433,12 @@ int EhFantasma(tJogo jogo, int l, int c) {
         jogo.mapaFant[l][c] == GHOST4) {
             return 1;
     }
-
     return 0;
 }
 
 // encontra a localizacao do portal em que o pacman nao esta sobreposto
 tCoordenada EncontraOutroPortal(tJogo jogo, int x, int y) {
     tCoordenada coord;
-
     int i, j;
     for (i = 0; i < jogo.nLinhas; i++) {
         for (j = 0; j < jogo.nColunas; j++) {
@@ -473,7 +479,7 @@ tJogo EfetuaResumo (tJogo jogo, char * diretorio, int nMov, char acao) {
 }
 
 // realiza as jogadas do pacman de acordo com a tecla pressionada
-tJogo EfetuaJogadaPacman (tJogo jogo, char acao) {
+tJogo EfetuaJogadaPacman (tJogo jogo, char acao, int nMov) {
     tCoordenada coord;      coord = IdentificaCoordenada(jogo, PACMAN);
     int x = coord.x;        int y = coord.y;
 
@@ -497,6 +503,7 @@ tJogo EfetuaJogadaPacman (tJogo jogo, char acao) {
 
             // se bateu na parede e esta em cima do portal
             if (jogo.mapa[x][y] == PORTAL && jogo.mapa[x-1][y] == PAREDE) {
+                jogo = EfetuaTrilha(jogo, nMov);
                 jogo.mapaPac[x][y] = VAZIO;
                 coordPortal = EncontraOutroPortal(jogo, x, y);
                 jogo.mapaPac[coordPortal.x][coordPortal.y] = PACMAN;
@@ -510,6 +517,7 @@ tJogo EfetuaJogadaPacman (tJogo jogo, char acao) {
                 movw.qtdColisoes++;
             
             } else if (jogo.mapa[x-1][y] == PORTAL) {   // se bateu no portal
+                jogo = EfetuaTrilha(jogo, nMov);
                 jogo.mapaPac[x][y] = VAZIO;
                 coordPortal = EncontraOutroPortal(jogo, x-1, y);
                 jogo.mapaPac[coordPortal.x][coordPortal.y] = PACMAN;
@@ -531,6 +539,7 @@ tJogo EfetuaJogadaPacman (tJogo jogo, char acao) {
 
             // se bateu na parede e esta em cima do portal
             if (jogo.mapa[x][y] == PORTAL && jogo.mapa[x+1][y] == PAREDE) {
+                jogo = EfetuaTrilha(jogo, nMov);
                 jogo.mapaPac[x][y] = VAZIO;
                 coordPortal = EncontraOutroPortal(jogo, x, y);
                 jogo.mapaPac[coordPortal.x][coordPortal.y] = PACMAN;
@@ -543,6 +552,7 @@ tJogo EfetuaJogadaPacman (tJogo jogo, char acao) {
                 movs.qtdColisoes++;
 
             } else if  (jogo.mapa[x+1][y] == PORTAL) {  // se bateu no portal
+                jogo = EfetuaTrilha(jogo, nMov);
                 jogo.mapaPac[x][y] = VAZIO;
                 coordPortal = EncontraOutroPortal(jogo, x+1, y);
                 jogo.mapaPac[coordPortal.x][coordPortal.y] = PACMAN;
@@ -564,6 +574,7 @@ tJogo EfetuaJogadaPacman (tJogo jogo, char acao) {
 
             // se bateu na parede e esta em cima do portal
             if (jogo.mapa[x][y] == PORTAL && jogo.mapa[x][y-1] == PAREDE) {
+                jogo = EfetuaTrilha(jogo, nMov);
                 jogo.mapaPac[x][y] = VAZIO;
                 coordPortal = EncontraOutroPortal(jogo, x, y);
                 jogo.mapaPac[coordPortal.x][coordPortal.y] = PACMAN;
@@ -576,6 +587,7 @@ tJogo EfetuaJogadaPacman (tJogo jogo, char acao) {
                 mova.qtdColisoes++;
 
             } else if  (jogo.mapa[x][y-1] == PORTAL) {  // se bateu no portal
+                jogo = EfetuaTrilha(jogo, nMov);
                 jogo.mapaPac[x][y] = VAZIO;
                 coordPortal = EncontraOutroPortal(jogo, x, y-1);
                 jogo.mapaPac[coordPortal.x][coordPortal.y] = PACMAN;
@@ -597,6 +609,7 @@ tJogo EfetuaJogadaPacman (tJogo jogo, char acao) {
 
             // se bateu na parede e esta em cima do portal
             if (jogo.mapa[x][y] == PORTAL && jogo.mapa[x][y+1] == PAREDE) {
+                jogo = EfetuaTrilha(jogo, nMov);
                 jogo.mapaPac[x][y] = VAZIO;
                 coordPortal = EncontraOutroPortal(jogo, x, y);
                 jogo.mapaPac[coordPortal.x][coordPortal.y] = PACMAN;
@@ -609,6 +622,7 @@ tJogo EfetuaJogadaPacman (tJogo jogo, char acao) {
                 movd.qtdColisoes++;
 
             } else if  (jogo.mapa[x][y+1] == PORTAL) {  // se bateu no portal
+                jogo = EfetuaTrilha(jogo, nMov);
                 jogo.mapaPac[x][y] = VAZIO;
                 coordPortal = EncontraOutroPortal(jogo, x, y+1);
                 jogo.mapaPac[coordPortal.x][coordPortal.y] = PACMAN;
@@ -639,7 +653,6 @@ tJogo EfetuaJogadaPacman (tJogo jogo, char acao) {
 
 // indica fantasmas presentes e suas coordenadas iniciais
 tJogo InicializaFantasmas(tJogo jogo) {
-
     tFantasma1B fb;         tFantasma2P fp;
     fb = jogo.fb;            fp = jogo.fp;
     tCoordenada coordB;     tCoordenada coordP;
@@ -687,7 +700,6 @@ tJogo InicializaFantasmas(tJogo jogo) {
             }
         }
     }
-
     return jogo;
 }
 
@@ -864,9 +876,6 @@ tJogo AnalisaCoordenadasGameOver(tJogo jogo) {
             pac.qtdVida--;
             jogo.pacman = pac;
     }
-
-    
-
     return jogo;
 }
 
@@ -889,7 +898,6 @@ tJogo VerificaPosicaoPacEComida(tJogo jogo, char acao) {
             if(jogo.mapa[i][j] == COMIDA && jogo.mapaPac[i][j] == PACMAN) {
                 jogo.mapa[i][j] = VAZIO;
                 estatistica.pacmanComeu++;
-
                 if (acao == 'w') {
                     movw.qtdComida++;
                 } else if (acao == 's') {
@@ -915,22 +923,19 @@ tJogo VerificaPosicaoPacEComida(tJogo jogo, char acao) {
 
 // retorna um inteiro para manipulacao e checagem se o pacman esta vivo ou nao
 int RetornaVidaPACMAN (tJogo jogo) {
-    tPacman pac;
-    pac = jogo.pacman;
+    tPacman pac;    pac = jogo.pacman;
     return pac.qtdVida;
 }
 
 // retorna quantos pontos o pacman realizou ate o momento
 int RetornaPontuacao (tJogo jogo) {
-    tEstatisticas s;
-    s = jogo.stats;
+    tEstatisticas s;    s = jogo.stats;
     return s.pacmanComeu;
 }
 
 // joga as estatisticas para o arquivo de estatisticas na saida
 void SaidaArquivoEstatisticas(tJogo jogo, char *diretorio, int qtdMov) {
-    tEstatisticas stats;
-    stats = jogo.stats;
+    tEstatisticas stats;     stats = jogo.stats;
     char dirEstatisticas[DIR_TAM_MAX];
     sprintf(dirEstatisticas, "%s/saida/estatisticas.txt", diretorio);
 
@@ -949,12 +954,11 @@ void SaidaArquivoEstatisticas(tJogo jogo, char *diretorio, int qtdMov) {
     fprintf(fEstatistica, "Numero de movimentos para cima: %d\n", stats.nMovimentoCima);
     fprintf(fEstatistica, "Numero de movimentos para esquerda: %d\n", stats.nMovimentoEsquerda);
     fprintf(fEstatistica, "Numero de movimentos para direita: %d\n", stats.nMovimentoDireita);
-
     fclose(fEstatistica);
 }
 
 int CriterioAlfabetico (tMovimentos m, tMovimentos n) {
-    return  m.charGen < n.charGen;
+    return m.charGen < n.charGen;
 }
 
 int CriterioUso (tMovimentos m, tMovimentos n) {
@@ -1002,8 +1006,7 @@ void RetornaRanking(tJogo jogo, char * diretorio) {
     tMovS movs;             movs = jogo.ms;
     tMovW movw;             movw = jogo.mw;
 
-    tMovimentos mov[4];
-    tMovimentos aux;
+    tMovimentos mov[4];     tMovimentos aux;
 
     mov[0].charGen = 'a';                           mov[1].charGen = 's';
     mov[0].qtdColisoes = mova.qtdColisoes;          mov[1].qtdColisoes = movs.qtdColisoes;
@@ -1015,11 +1018,6 @@ void RetornaRanking(tJogo jogo, char * diretorio) {
     mov[2].qtdComida = movd.qtdComida;              mov[3].qtdComida = movw.qtdComida;
     mov[2].qtdUsos = movd.qtdUsos;                  mov[3].qtdUsos = movw.qtdUsos;
 
-
-    // w,1,0,4
-    // MOV, COMIDA, COLISAO, USOS
-    //Mukufofoj1-
-    
     int i, j;
     for (i = 0; i < 4; i++) {
         for (j = i+1; j < 4; j++) {
@@ -1034,7 +1032,6 @@ void RetornaRanking(tJogo jogo, char * diretorio) {
     for (i = 3; i >= 0; i--) {
         fprintf(fRanking, "%c,%d,%d,%d\n", mov[i].charGen, mov[i].qtdComida, mov[i].qtdColisoes, mov[i].qtdUsos);
     }
-
     fclose(fRanking);
 }
 
@@ -1053,7 +1050,6 @@ tJogo InicializaTMovimentos(tJogo jogo) {
     movs.qtdUsos = 0;           movw.qtdUsos = 0;
     movs.charS = 's';           movw.charW = 'w';
     jogo.ms = movs;             jogo.mw = movw;
-
     return jogo;
 }
 
@@ -1067,7 +1063,7 @@ void RealizaJogo(tJogo jogo, char * diretorio) {
         jogo.flagResumo = 0;
 
         printf("Estado do jogo apos o movimento '%c':\n", acao);
-        jogo = EfetuaJogadaPacman(jogo, acao);  nMov++;
+        jogo = EfetuaJogadaPacman(jogo, acao, nMov);  nMov++;
 
         jogo = MoveFantasmaB(jogo);
         jogo = MoveFantasmaP(jogo);

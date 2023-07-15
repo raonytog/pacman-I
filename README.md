@@ -3,13 +3,14 @@
 
 Seguem anexos possibilidades de mapas para testes do jogo.
 O código segue a seguinte instrução de execução:
-  ./<nome do executavel do programa> <diretorio em que se encontra o arquivo "mapa.txt">
+    ./<nome do executavel do programa> <diretorio em que se encontra o arquivo "mapa.txt">
 > 
+
 
 
 *ENG* < Versions of my process of creating a programming work at UFES, with the objective of creating the Pacman game using the C language in the terminal.
 
 Attached are possibilities of maps for testing the game. 
 The code follows the following run instruction:
-  ./<program executable name> <directory where the "mapa.txt" file is located>
+    ./<program executable name> <directory where the "mapa.txt" file is located>
 >

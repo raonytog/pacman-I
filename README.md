@@ -1,2 +1,15 @@
 # Trabalho-prog1
-All my process day after day while I code pacman game in terminal with C for UFES work in CS class.
+*PT* < Versões do meu processo de criação de um trabalho de programação 1 na UFES, com o objetivo de criar o jogo do Pacman utilizando a linguagem C no terminal. 
+
+Seguem anexos possibilidades de mapas para testes do jogo.
+O código segue a seguinte instrução de execução:
+  ./<nome do executavel do programa> <diretorio em que se encontra o arquivo "mapa.txt">
+> 
+
+
+*ENG* < Versions of my process of creating a programming work at UFES, with the objective of creating the Pacman game using the C language in the terminal.
+
+Attached are possibilities of maps for testing the game. 
+The code follows the following run instruction:
+  ./<program executable name> <directory where the "mapa.txt" file is located>
+>

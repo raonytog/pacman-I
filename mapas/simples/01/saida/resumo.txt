@@ -1,0 +1,5 @@
+Movimento 3 (w) pegou comida
+Movimento 7 (d) pegou comida
+Movimento 8 (d) colidiu na parede
+Movimento 10 (s) pegou comida
+Movimento 13 (a) pegou comida

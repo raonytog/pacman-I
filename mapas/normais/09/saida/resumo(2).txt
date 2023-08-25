@@ -1,0 +1,6 @@
+Movimento 1 (d) colidiu na parede
+Movimento 6 (s) pegou comida
+Movimento 9 (a) pegou comida
+Movimento 18 (w) pegou comida
+Movimento 20 (a) colidiu na parede
+Movimento 22 (a) pegou comida

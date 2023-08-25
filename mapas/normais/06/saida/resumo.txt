@@ -1,0 +1,29 @@
+Movimento 3 (s) pegou comida
+Movimento 6 (w) pegou comida
+Movimento 11 (d) pegou comida
+Movimento 13 (w) colidiu na parede
+Movimento 14 (d) pegou comida
+Movimento 16 (w) pegou comida
+Movimento 21 (d) pegou comida
+Movimento 28 (s) pegou comida
+Movimento 44 (a) pegou comida
+Movimento 46 (a) pegou comida
+Movimento 51 (a) pegou comida
+Movimento 53 (w) pegou comida
+Movimento 54 (d) pegou comida
+Movimento 57 (a) pegou comida
+Movimento 60 (s) pegou comida
+Movimento 61 (s) colidiu na parede
+Movimento 62 (a) pegou comida
+Movimento 69 (d) pegou comida
+Movimento 76 (w) colidiu na parede
+Movimento 83 (w) pegou comida
+Movimento 88 (s) pegou comida
+Movimento 89 (s) pegou comida
+Movimento 90 (s) colidiu na parede
+Movimento 94 (w) pegou comida
+Movimento 118 (a) pegou comida
+Movimento 122 (s) pegou comida
+Movimento 137 (s) pegou comida
+Movimento 149 (d) pegou comida
+Movimento 165 (w) fim de jogo por encostar em um fantasma

@@ -1,0 +1,119 @@
+Estado do jogo apos o movimento 'w':
+#######
+#*   *#
+#  *B #
+#> ##*#
+#     #
+#######
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'w':
+#######
+#*   *#
+#> B  #
+#  ##*#
+#     #
+#######
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'w':
+#######
+#>   *#
+# B*  #
+#  ##*#
+#     #
+#######
+Pontuacao: 1
+
+Estado do jogo apos o movimento 'd':
+#######
+# >  *#
+#B *  #
+#  ##*#
+#     #
+#######
+Pontuacao: 1
+
+Estado do jogo apos o movimento 'd':
+#######
+#  > *#
+# B*  #
+#  ##*#
+#     #
+#######
+Pontuacao: 1
+
+Estado do jogo apos o movimento 'd':
+#######
+#   >*#
+#  B  #
+#  ##*#
+#     #
+#######
+Pontuacao: 1
+
+Estado do jogo apos o movimento 'd':
+#######
+#    >#
+#  *B #
+#  ##*#
+#     #
+#######
+Pontuacao: 2
+
+Estado do jogo apos o movimento 'd':
+#######
+#    >#
+#  * B#
+#  ##*#
+#     #
+#######
+Pontuacao: 2
+
+Estado do jogo apos o movimento 's':
+#######
+#     #
+#  *B>#
+#  ##*#
+#     #
+#######
+Pontuacao: 2
+
+Estado do jogo apos o movimento 's':
+#######
+#     #
+#  B  #
+#  ##>#
+#     #
+#######
+Pontuacao: 3
+
+Estado do jogo apos o movimento 'w':
+#######
+#     #
+# B* >#
+#  ## #
+#     #
+#######
+Pontuacao: 3
+
+Estado do jogo apos o movimento 'a':
+#######
+#     #
+#B *> #
+#  ## #
+#     #
+#######
+Pontuacao: 3
+
+Estado do jogo apos o movimento 'a':
+#######
+#     #
+# B>  #
+#  ## #
+#     #
+#######
+Pontuacao: 4
+
+Voce venceu!
+Pontuacao final: 4

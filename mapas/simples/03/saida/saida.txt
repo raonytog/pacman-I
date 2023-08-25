@@ -1,0 +1,50 @@
+Estado do jogo apos o movimento 'w':
+#######
+#    *#
+#> P  #
+#     #
+#######
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'w':
+#######
+#>   *#
+#     #
+#  P  #
+#######
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+#######
+# >  *#
+#  P  #
+#     #
+#######
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'w':
+#######
+# >P *#
+#     #
+#     #
+#######
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+#######
+#  > *#
+#  P  #
+#     #
+#######
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+#######
+#   >*#
+#     #
+#  P  #
+#######
+Pontuacao: 0
+
+Game over!
+Pontuacao final: 0

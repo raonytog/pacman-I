@@ -1,0 +1,115 @@
+Movimento 1 (d) colidiu na parede
+Movimento 2 (w) colidiu na parede
+Movimento 3 (d) colidiu na parede
+Movimento 4 (s) pegou comida
+Movimento 6 (a) colidiu na parede
+Movimento 7 (a) colidiu na parede
+Movimento 10 (d) colidiu na parede
+Movimento 13 (a) pegou comida
+Movimento 17 (d) colidiu na parede
+Movimento 18 (a) colidiu na parede
+Movimento 19 (w) pegou comida
+Movimento 20 (a) colidiu na parede
+Movimento 21 (a) colidiu na parede
+Movimento 27 (a) colidiu na parede
+Movimento 34 (w) colidiu na parede
+Movimento 47 (d) pegou comida
+Movimento 49 (a) colidiu na parede
+Movimento 58 (d) pegou comida
+Movimento 60 (s) colidiu na parede
+Movimento 61 (s) colidiu na parede
+Movimento 62 (s) colidiu na parede
+Movimento 63 (w) pegou comida
+Movimento 64 (d) pegou comida
+Movimento 67 (s) pegou comida
+Movimento 68 (s) pegou comida
+Movimento 69 (a) colidiu na parede
+Movimento 73 (d) colidiu na parede
+Movimento 74 (d) colidiu na parede
+Movimento 78 (a) colidiu na parede
+Movimento 79 (d) colidiu na parede
+Movimento 86 (a) colidiu na parede
+Movimento 87 (a) colidiu na parede
+Movimento 88 (w) colidiu na parede
+Movimento 89 (s) pegou comida
+Movimento 95 (s) colidiu na parede
+Movimento 96 (s) colidiu na parede
+Movimento 97 (s) colidiu na parede
+Movimento 101 (d) colidiu na parede
+Movimento 102 (a) pegou comida
+Movimento 105 (w) colidiu na parede
+Movimento 107 (d) colidiu na parede
+Movimento 110 (d) colidiu na parede
+Movimento 111 (s) pegou comida
+Movimento 115 (s) pegou comida
+Movimento 116 (s) pegou comida
+Movimento 120 (w) colidiu na parede
+Movimento 121 (a) colidiu na parede
+Movimento 122 (a) colidiu na parede
+Movimento 123 (a) colidiu na parede
+Movimento 131 (d) colidiu na parede
+Movimento 132 (d) colidiu na parede
+Movimento 140 (a) colidiu na parede
+Movimento 141 (w) colidiu na parede
+Movimento 142 (a) colidiu na parede
+Movimento 143 (w) colidiu na parede
+Movimento 144 (a) colidiu na parede
+Movimento 145 (a) colidiu na parede
+Movimento 149 (d) pegou comida
+Movimento 152 (d) colidiu na parede
+Movimento 157 (d) pegou comida
+Movimento 158 (d) colidiu na parede
+Movimento 161 (d) colidiu na parede
+Movimento 162 (d) colidiu na parede
+Movimento 163 (d) colidiu na parede
+Movimento 164 (d) colidiu na parede
+Movimento 167 (d) colidiu na parede
+Movimento 182 (d) colidiu na parede
+Movimento 183 (d) colidiu na parede
+Movimento 184 (d) colidiu na parede
+Movimento 187 (s) colidiu na parede
+Movimento 191 (d) colidiu na parede
+Movimento 193 (d) colidiu na parede
+Movimento 195 (a) colidiu na parede
+Movimento 196 (d) colidiu na parede
+Movimento 207 (a) colidiu na parede
+Movimento 208 (w) colidiu na parede
+Movimento 211 (a) colidiu na parede
+Movimento 214 (d) colidiu na parede
+Movimento 215 (d) colidiu na parede
+Movimento 216 (d) colidiu na parede
+Movimento 220 (d) colidiu na parede
+Movimento 222 (a) colidiu na parede
+Movimento 224 (s) colidiu na parede
+Movimento 227 (s) colidiu na parede
+Movimento 229 (d) colidiu na parede
+Movimento 232 (d) colidiu na parede
+Movimento 235 (w) colidiu na parede
+Movimento 238 (w) colidiu na parede
+Movimento 239 (s) colidiu na parede
+Movimento 248 (d) colidiu na parede
+Movimento 249 (w) colidiu na parede
+Movimento 254 (a) colidiu na parede
+Movimento 257 (s) colidiu na parede
+Movimento 258 (s) colidiu na parede
+Movimento 259 (s) colidiu na parede
+Movimento 261 (a) pegou comida
+Movimento 267 (s) colidiu na parede
+Movimento 268 (s) colidiu na parede
+Movimento 270 (a) colidiu na parede
+Movimento 271 (w) colidiu na parede
+Movimento 272 (a) colidiu na parede
+Movimento 274 (s) colidiu na parede
+Movimento 276 (s) colidiu na parede
+Movimento 283 (a) colidiu na parede
+Movimento 286 (w) colidiu na parede
+Movimento 289 (w) colidiu na parede
+Movimento 290 (s) colidiu na parede
+Movimento 293 (w) colidiu na parede
+Movimento 294 (w) colidiu na parede
+Movimento 295 (w) colidiu na parede
+Movimento 296 (a) colidiu na parede
+Movimento 297 (a) colidiu na parede
+Movimento 302 (w) colidiu na parede
+Movimento 304 (d) colidiu na parede
+Movimento 306 (a) colidiu na parede

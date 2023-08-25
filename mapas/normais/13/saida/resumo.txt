@@ -1,0 +1,136 @@
+Movimento 3 (s) colidiu na parede
+Movimento 73 (s) pegou comida
+Movimento 81 (s) colidiu na parede
+Movimento 85 (d) colidiu na parede
+Movimento 86 (a) colidiu na parede
+Movimento 92 (s) colidiu na parede
+Movimento 95 (w) pegou comida
+Movimento 105 (s) colidiu na parede
+Movimento 106 (s) colidiu na parede
+Movimento 107 (s) colidiu na parede
+Movimento 108 (s) colidiu na parede
+Movimento 111 (s) colidiu na parede
+Movimento 125 (a) pegou comida
+Movimento 148 (s) colidiu na parede
+Movimento 169 (w) pegou comida
+Movimento 171 (w) pegou comida
+Movimento 184 (d) pegou comida
+Movimento 188 (w) pegou comida
+Movimento 191 (w) pegou comida
+Movimento 214 (d) pegou comida
+Movimento 215 (s) pegou comida
+Movimento 217 (s) colidiu na parede
+Movimento 219 (s) colidiu na parede
+Movimento 228 (w) colidiu na parede
+Movimento 229 (w) colidiu na parede
+Movimento 231 (a) colidiu na parede
+Movimento 237 (d) colidiu na parede
+Movimento 240 (d) colidiu na parede
+Movimento 241 (d) colidiu na parede
+Movimento 244 (d) colidiu na parede
+Movimento 245 (d) colidiu na parede
+Movimento 246 (d) colidiu na parede
+Movimento 247 (a) colidiu na parede
+Movimento 248 (a) colidiu na parede
+Movimento 283 (s) pegou comida
+Movimento 286 (d) pegou comida
+Movimento 287 (d) colidiu na parede
+Movimento 290 (d) pegou comida
+Movimento 291 (s) colidiu na parede
+Movimento 292 (s) colidiu na parede
+Movimento 295 (d) colidiu na parede
+Movimento 303 (s) colidiu na parede
+Movimento 309 (w) pegou comida
+Movimento 320 (s) colidiu na parede
+Movimento 342 (s) colidiu na parede
+Movimento 351 (s) colidiu na parede
+Movimento 352 (s) colidiu na parede
+Movimento 354 (s) colidiu na parede
+Movimento 364 (s) colidiu na parede
+Movimento 367 (s) colidiu na parede
+Movimento 368 (s) colidiu na parede
+Movimento 378 (a) pegou comida
+Movimento 418 (s) colidiu na parede
+Movimento 419 (s) colidiu na parede
+Movimento 420 (s) colidiu na parede
+Movimento 422 (s) colidiu na parede
+Movimento 423 (s) colidiu na parede
+Movimento 424 (s) colidiu na parede
+Movimento 425 (s) colidiu na parede
+Movimento 426 (s) colidiu na parede
+Movimento 432 (a) colidiu na parede
+Movimento 435 (a) colidiu na parede
+Movimento 436 (a) colidiu na parede
+Movimento 439 (d) colidiu na parede
+Movimento 444 (a) pegou comida
+Movimento 447 (s) colidiu na parede
+Movimento 448 (s) colidiu na parede
+Movimento 450 (s) colidiu na parede
+Movimento 452 (s) colidiu na parede
+Movimento 453 (w) colidiu na parede
+Movimento 454 (s) colidiu na parede
+Movimento 456 (w) colidiu na parede
+Movimento 459 (s) colidiu na parede
+Movimento 460 (a) pegou comida
+Movimento 462 (w) colidiu na parede
+Movimento 465 (w) colidiu na parede
+Movimento 466 (s) colidiu na parede
+Movimento 467 (s) colidiu na parede
+Movimento 472 (w) colidiu na parede
+Movimento 475 (s) colidiu na parede
+Movimento 476 (w) colidiu na parede
+Movimento 478 (a) pegou comida
+Movimento 479 (a) pegou comida
+Movimento 481 (w) colidiu na parede
+Movimento 482 (s) colidiu na parede
+Movimento 483 (w) colidiu na parede
+Movimento 484 (w) colidiu na parede
+Movimento 486 (w) pegou comida
+Movimento 487 (a) colidiu na parede
+Movimento 489 (a) colidiu na parede
+Movimento 491 (d) colidiu na parede
+Movimento 492 (d) colidiu na parede
+Movimento 494 (s) colidiu na parede
+Movimento 496 (w) colidiu na parede
+Movimento 497 (w) colidiu na parede
+Movimento 498 (w) colidiu na parede
+Movimento 499 (w) colidiu na parede
+Movimento 500 (s) colidiu na parede
+Movimento 501 (s) colidiu na parede
+Movimento 506 (s) colidiu na parede
+Movimento 511 (s) colidiu na parede
+Movimento 513 (w) colidiu na parede
+Movimento 514 (s) colidiu na parede
+Movimento 517 (s) colidiu na parede
+Movimento 519 (s) colidiu na parede
+Movimento 526 (s) colidiu na parede
+Movimento 529 (w) colidiu na parede
+Movimento 530 (w) colidiu na parede
+Movimento 534 (s) colidiu na parede
+Movimento 536 (w) colidiu na parede
+Movimento 537 (w) colidiu na parede
+Movimento 538 (w) colidiu na parede
+Movimento 539 (w) colidiu na parede
+Movimento 545 (w) colidiu na parede
+Movimento 549 (d) colidiu na parede
+Movimento 550 (a) colidiu na parede
+Movimento 555 (a) colidiu na parede
+Movimento 556 (d) colidiu na parede
+Movimento 558 (a) colidiu na parede
+Movimento 559 (s) colidiu na parede
+Movimento 560 (s) colidiu na parede
+Movimento 561 (s) colidiu na parede
+Movimento 562 (a) colidiu na parede
+Movimento 563 (s) colidiu na parede
+Movimento 565 (a) colidiu na parede
+Movimento 574 (s) colidiu na parede
+Movimento 575 (s) colidiu na parede
+Movimento 576 (s) colidiu na parede
+Movimento 577 (d) pegou comida
+Movimento 590 (s) colidiu na parede
+Movimento 591 (s) colidiu na parede
+Movimento 593 (d) colidiu na parede
+Movimento 594 (d) colidiu na parede
+Movimento 595 (a) colidiu na parede
+Movimento 598 (a) colidiu na parede
+Movimento 600 (a) colidiu na parede

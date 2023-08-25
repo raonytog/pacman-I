@@ -1,0 +1,4 @@
+Movimento 3 (w) pegou comida
+Movimento 6 (d) pegou comida
+Movimento 11 (s) colidiu na parede
+Movimento 13 (s) fim de jogo por encostar em um fantasma
